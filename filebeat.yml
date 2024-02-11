@@ -1,0 +1,10 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/lib/jenkins/workspace/Myfirstproject/logs/application.log
+  fields:
+    log_type: springboot
+
+output.logstash:
+  hosts: ["localhost:5044"]  # Replace with the address of your Logstash server
