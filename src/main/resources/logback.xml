@@ -16,7 +16,7 @@
 
     <!-- Define the SocketAppender for Logstash -->
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>localhost:5044</destination>
+        <destination>localhost:5000</destination>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <!-- Your Logstash-specific encoder configuration goes here -->
         </encoder>
