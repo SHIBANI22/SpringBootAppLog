@@ -15,27 +15,25 @@
     </appender>
 
     <!-- Define the SocketAppender for Logstash -->
-   <!-- Define the SocketAppender for Logstash -->
-<appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-    <destination>localhost:5000</destination>
-    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-        <!-- Your Logstash-specific encoder configuration goes here -->
-    </encoder>
-    <keepAliveDuration>300000</keepAliveDuration>
-    
-    <acceptConnectionTimeout>5000</acceptConnectionTimeout>
-    <sendBufferSize>8192</sendBufferSize>
-    <tcpNoDelay>true</tcpNoDelay>
-    <ssl>
-        <enabled>false</enabled>
-    </ssl>
-    <maxRetryCount>3</maxRetryCount>
-</appender>
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!-- Your Logstash-specific encoder configuration goes here -->
+        </encoder>
+        <keepAliveDuration>300000</keepAliveDuration>
+        <!-- Removed elements causing errors -->
+        <!-- <acceptConnectionTimeout>5000</acceptConnectionTimeout> -->
+        <!-- <sendBufferSize>8192</sendBufferSize> -->
+        <!-- <tcpNoDelay>true</tcpNoDelay> -->
+        <ssl>
+            <enabled>false</enabled>
+        </ssl>
+        <!-- <maxRetryCount>3</maxRetryCount> -->
+    </appender>
 
-        <appender name="TCP" class="ch.qos.logback.classic.net.SocketAppender">
+    <appender name="TCP" class="ch.qos.logback.classic.net.SocketAppender">
         <remoteHost>localhost</remoteHost>
         <port>5044</port>
-        
         <reconnectionDelay>10000</reconnectionDelay>
         <includeCallerData>true</includeCallerData>
     </appender>
