@@ -57,16 +57,22 @@
         <version>2.14.1</version> <!-- Use the same version as log4j-api -->
     	</dependency>
     	
-        <dependency>
-        <groupId>net.logstash.logback</groupId>
-        <artifactId>logstash-logback-encoder</artifactId>
-        <version>6.6</version> <!-- Use the latest version available -->
-    	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.logstash.logback/logstash-logback-encoder -->
+	<dependency>
+    	<groupId>net.logstash.logback</groupId>
+    	<artifactId>logstash-logback-encoder</artifactId>
+    	<version>7.4</version>
+	</dependency>
+
     	
-    	<dependency>
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+	<dependency>
     	<groupId>ch.qos.logback</groupId>
     	<artifactId>logback-classic</artifactId>
+    	<version>1.4.14</version>
+    	<scope>test</scope>
 	</dependency>
+
 	
         <!-- Exclude Logback from Spring Boot Starter Logging to avoid conflicts -->
         <dependency>
